@@ -1,0 +1,11 @@
+<app-navigation></app-navigation>
+<div class="employee-delete">
+  <h2>Delete Employee</h2>
+  
+  <!-- Input for Employee ID -->
+  <label for="employeeId">Enter Employee ID:</label>
+  <input type="number" id="employeeId" [(ngModel)]="employeeId" class="form-control" placeholder="Enter employee ID" />
+
+  <button (click)="deleteEmployee()" class="btn btn-danger" [disabled]="!employeeId">Delete</button>
+  <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+</div>

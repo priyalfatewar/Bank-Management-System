@@ -1,0 +1,208 @@
+<!-- 
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input [(ngModel)]="currentManager.lastName" type="text" id="lastName" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input [(ngModel)]="currentManager.email" type="email" id="email" class="form-control" >
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department:</label>
+                <input [(ngModel)]="currentManager.department" type="text" id="department" class="form-control">
+            </div>
+
+            <button (click)="addManager()" class="btn btn-primary" *ngIf="currentManager.id === 0">Add Manager</button>
+            <button (click)="updateManager()" class="btn btn-success" *ngIf="currentManager.id !== 0">Update Manager</button>
+        </div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Manager List</h2>
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>Manager ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Department</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let manager of managers">
+                <td>{{ manager.id }}</td>
+                <td>{{ manager.firstName }}</td>
+                <td>{{ manager.lastName }}</td>
+                <td>{{ manager.email }}</td>
+                <td>{{ manager.department }}</td>
+                <td>
+                    <button (click)="setCurrentManager(manager)" class="btn btn-warning btn-sm">Edit</button>
+                    <button (click)="deleteManager(manager.id)" class="btn btn-danger btn-sm">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+ -->
+ <app-navbar></app-navbar>
+
+ <div class="container mt-4">
+ 
+     <h1 class="text-center">Manager Operations</h1>
+ 
+ 
+ 
+     <!-- Add/Edit Manager Form -->
+ 
+     <div class="card">
+ 
+         <div class="card-header">
+ 
+             <h3 *ngIf="currentManager.id === 0">Add Manager</h3>
+ 
+             <h3 *ngIf="currentManager.id !== 0">Edit Manager</h3>
+ 
+         </div>
+ 
+         <div class="card-body">
+ 
+             <div class="form-group">
+ 
+                 <label for="firstName">First Name:</label>
+ 
+                 <input [(ngModel)]="currentManager.firstName" type="text" id="firstName" class="form-control">
+ 
+                 <div *ngIf="currentManager.firstName && !isValidName(currentManager.firstName)" class="text-danger">
+ 
+                   First Name must only contain letters.
+ 
+                 </div>
+ 
+               </div>
+ 
+               
+ 
+               <!-- Last Name -->
+ 
+               <div class="form-group">
+ 
+                 <label for="lastName">Last Name:</label>
+ 
+                 <input [(ngModel)]="currentManager.lastName" type="text" id="lastName" class="form-control">
+ 
+                 <div *ngIf="currentManager.lastName && !isValidName(currentManager.lastName)" class="text-danger">
+ 
+                   Last Name must only contain letters.
+ 
+                 </div>
+ 
+               </div>
+ 
+               
+ 
+               <!-- Email -->
+ 
+               <div class="form-group">
+ 
+                 <label for="email">Email:</label>
+ 
+                 <input [(ngModel)]="currentManager.email" type="email" id="email" class="form-control">
+ 
+                 <div *ngIf="currentManager.email && !isValidEmail(currentManager.email)" class="text-danger">
+ 
+                   Please enter a valid email.
+ 
+                 </div>
+ 
+               </div>
+ 
+ 
+ 
+             <!-- Department -->
+ 
+             <div class="form-group">
+                <label for="department">Department:</label>
+                <select [(ngModel)]="currentManager.department" id="department" class="form-control" name="department" required>
+                  <option value="" disabled selected>Select Department</option>
+                  <option *ngFor="let department of departments" [value]="department">{{ department }}</option>
+                </select>
+              </div>
+ 
+ 
+ 
+             <!-- Add / Update Button -->
+ 
+             <button (click)="addManager()" class="btn btn-primary" *ngIf="currentManager.id === 0">Add Manager</button>
+ 
+             <button (click)="updateManager()" class="btn btn-success" *ngIf="currentManager.id !== 0">Update Manager</button>
+ 
+         </div>
+ 
+     </div>
+ 
+ 
+ 
+     <hr>
+ 
+ 
+ 
+     <!-- Manager List -->
+ 
+     <h2 class="text-center">Manager List</h2>
+ 
+     <table class="table table-bordered">
+ 
+         <thead class="thead-dark">
+ 
+             <tr>
+ 
+                 <th>Manager ID</th>
+ 
+                 <th>First Name</th>
+ 
+                 <th>Last Name</th>
+ 
+                 <th>Email</th>
+ 
+                 <th>Department</th>
+ 
+                 <th>Actions</th>
+ 
+             </tr>
+ 
+         </thead>
+ 
+         <tbody>
+ 
+             <tr *ngFor="let manager of managers">
+ 
+                 <td *ngIf="!manager.deleted">{{ manager.id }}</td>
+ 
+                 <td *ngIf="!manager.deleted">{{ manager.firstName }}</td>
+ 
+                 <td *ngIf="!manager.deleted">{{ manager.lastName }}</td>
+ 
+                 <td *ngIf="!manager.deleted">{{ manager.email }}</td>
+ 
+                 <td *ngIf="!manager.deleted">{{ manager.department }}</td>
+ 
+                 <td *ngIf="!manager.deleted">
+ 
+                     <button (click)="setCurrentManager(manager)" class="btn btn-warning btn-sm">Edit</button>&nbsp;&nbsp;
+ 
+                     <button (click)="deleteManager(manager.id)" class="btn btn-danger btn-sm">Delete</button>
+ 
+                 </td>
+ 
+             </tr>
+ 
+         </tbody>
+ 
+     </table>
+ 
+ </div>

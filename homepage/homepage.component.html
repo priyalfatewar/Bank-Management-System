@@ -1,0 +1,42 @@
+<!-- src/app/homepage/homepage.component.html -->
+
+<div class="container-fluid vh-100 d-flex flex-column justify-content-center align-items-center bg-light" style="background-image: url('https://via.placeholder.com/1500x1000'); background-size: cover; background-position: center;">
+
+    <!-- Heading Section -->
+    <div class="text-center text-black mb-4">
+      <h1 class="display-4 fw-bold">Welcome to the Bank Management System</h1>
+      <p class="lead">Please select your login option:</p>
+    </div>
+  
+    <!-- Login Options Card -->
+    <div class="card shadow-lg p-4 rounded-3" style="max-width: 500px; background-color: rgba(255, 255, 255, 0.8);">
+      
+      <div class="row justify-content-center">
+        
+        <!-- Login as Admin Button -->
+        <div class="col-12 mb-3">
+          <button class="btn btn-primary btn-lg w-100 shadow-sm rounded" (click)="loginAs('admin')">
+            Login as Admin
+          </button>
+        </div>
+  
+        <!-- Login as Manager Button -->
+        <div class="col-12 mb-3">
+          <button class="btn btn-success btn-lg w-100 shadow-sm rounded" (click)="loginAs('manager')">
+            Login as Manager
+          </button>
+        </div>
+  
+        <!-- Login as Customer Button -->
+        <div class="col-12 mb-3">
+          <button class="btn btn-warning btn-lg w-100 shadow-sm rounded" (click)="loginAs('customer')">
+            Login as Customer
+          </button>
+        </div>
+  
+      </div>
+      
+    </div>
+  
+  </div>
+  

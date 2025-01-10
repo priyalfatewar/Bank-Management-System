@@ -1,0 +1,32 @@
+<div class="container mt-4">
+  <h2>Create Account</h2>
+
+  <form (ngSubmit)="createAccount()">
+    <div class="mb-3">
+      <label for="accountName" class="form-label">Account Name</label>
+      <input type="text" class="form-control" id="accountName" [(ngModel)]="newAccountName" name="accountName" required disabled />
+    </div>
+    <div class="mb-3">
+      <label for="accountType" class="form-label">Account Type</label>
+      <select class="form-control" id="accountType" [(ngModel)]="newAccountType" name="accountType" required>
+        <option value="" disabled selected>Select Account Type</option>
+        <option value="saving">Saving</option>
+        <option value="salary">Salary</option>
+        <option value="current">Current</option>
+      </select>
+    </div>
+    
+    <div class="mb-3">
+      <label for="balance" class="form-label">Initial Balance</label>
+      <input type="number" class="form-control" id="balance" [(ngModel)]="newAccountBalance" name="balance" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Create Account</button>
+  </form>
+
+  <!-- Displaying error or success message -->
+  <div *ngIf="isLoading" class="spinner-border text-primary" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+</div>

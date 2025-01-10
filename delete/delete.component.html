@@ -1,0 +1,15 @@
+<div class="container mt-4">
+    <h2>Delete Account</h2>
+  
+    <form (ngSubmit)="deleteAccount()">
+      <div class="mb-3">
+        <label for="SSNId" class="form-label">SSNId</label>
+        <input type="text" class="form-control" [(ngModel)]="SSNId" name="SSNId" required disabled/>
+      </div>
+      <button type="submit" class="btn btn-danger">Delete Account</button>
+    </form>
+  
+    <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+  </div>
+  

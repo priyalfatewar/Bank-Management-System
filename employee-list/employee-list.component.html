@@ -1,0 +1,26 @@
+<app-navigation></app-navigation>
+<div class="employee-list">
+  <h2>Employee List</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>  <!-- Display ID -->
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.position }}</td>
+        <td>{{ employee.department }}</td>
+        <td>{{ employee.salary }}</td>
+        <td>{{ employee.status }}</td>  <!-- Display Status -->
+      </tr>
+    </tbody>
+  </table>
+</div>

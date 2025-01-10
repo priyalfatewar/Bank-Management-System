@@ -1,0 +1,74 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <div class="container-fluid">
+
+    <a class="navbar-brand" routerLink="/transactions"><strong>Back to Transaction</strong> </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+
+      <ul class="navbar-nav ms-auto">
+
+        <li class="nav-item">
+
+          
+
+        </li>
+
+        
+
+      </ul>
+
+    </div>
+
+  </div>
+
+</nav>
+<div class="container mt-4">
+  <h2>Transfer Money</h2>
+  <form (ngSubmit)="transferMoney()">
+    <!-- Sender Account Number -->
+    <div class="mb-3">
+      <label for="senderAccountNumber" class="form-label">Sender Account Number</label>
+      <input type="text" class="form-control" [(ngModel)]="senderAccountNumber" name="senderAccountNumber" required disabled/>
+    </div>
+    <!-- Sender IFSC Code -->
+    <div class="mb-3">
+      <label for="senderIfscCode" class="form-label">Sender IFSC Code</label>
+      <input type="text" class="form-control" [(ngModel)]="senderIfscCode" name="senderIfscCode" required disabled/>
+    </div>
+
+    <!-- Receiver Account Number -->
+    <div class="mb-3">
+      <label for="receiverAccountNumber" class="form-label">Receiver Account Number</label>
+      <input type="text" class="form-control" [(ngModel)]="receiverAccountNumber" name="receiverAccountNumber" required />
+    </div>
+
+    
+    <!-- Receiver IFSC Code -->
+    <div class="mb-3">
+      <label for="receiverIfscCode" class="form-label">Receiver IFSC Code</label>
+      <input type="text" class="form-control" [(ngModel)]="receiverIfscCode" name="receiverIfscCode" required />
+    </div>
+    <!-- Amount -->
+    <div class="mb-3">
+      <label for="amount" class="form-label">Amount</label>
+      <input type="number" class="form-control" [(ngModel)]="amount" name="amount" required />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn btn-primary">Transfer</button>
+  </form>
+
+  <!-- Error Message -->
+  <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage }}</div>
+
+  <!-- Success Message -->
+  <div *ngIf="successMessage" class="alert alert-success mt-3">{{ successMessage }}</div>
+</div>

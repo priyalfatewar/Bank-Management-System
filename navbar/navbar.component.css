@@ -1,0 +1,9 @@
+/* src/app/navbar/navbar.component.css */
+.navbar {
+    margin-bottom: 20px;
+  }
+  
+  .nav-link.active {
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,36 @@
+<div class="container mt-4">
+    
+  
+    <div *ngIf="true">
+      <p><strong>Account Name:</strong> {{ accountName }}</p>
+      <p><strong>Account Type:</strong> {{ accountType }}</p>
+      <p><strong>Account No:</strong> {{ accountNumber  }}</p>
+    </div>
+    <!-- <div *ngIf="true">
+      <p><strong>Account Name:</strong> 
+        <input type="text" [(ngModel)]="account1.accountName" name="accountName" disabled />
+      </p>
+      
+      <p><strong>Account Type:</strong>
+        <input type="text" [(ngModel)]="account1.accountType"  name="accountType" />
+      </p>
+      
+      <p><strong>Balance:</strong>
+        <input type="number" [(ngModel)]="account1.balance" name="balance" disabled />
+      </p>
+    </div>
+    
+  
+   -->
+    <!-- Account Operations -->
+    <div class="btn-group">
+      <button class="btn btn-primary" (click)="updateAccount()">Update Account</button>&nbsp;
+
+      <button class="btn btn-danger" (click)="deleteAccount()">Delete Account</button>
+    </div>
+  
+    
+    <br />
+  </div>
+  <br />
+  

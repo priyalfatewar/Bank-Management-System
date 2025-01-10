@@ -1,0 +1,13 @@
+/* src/app/manager/manager.component.css */
+.container {
+    max-width: 900px;
+  }
+  
+  .card {
+    margin-bottom: 30px;
+  }
+  
+  table {
+    margin-top: 20px;
+  }
+  
